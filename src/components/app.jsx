@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import React, { Component } from 'react';
 import TitleBar from './TitleBar/titleBar';
 
@@ -21,7 +20,7 @@ class App extends Component {
     
     
 
-    render(); {
+    render() {
         return (
             <div className="container-fluid">
                 <TitleBar />
@@ -43,8 +42,7 @@ class App extends Component {
 
         );
     }
-    
-    
-
+}
 
 export default App;
+
