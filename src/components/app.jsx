@@ -1,48 +1,34 @@
-import React, { Component } from 'react';
-import TitleBar from './TitleBar/titleBar';
+import React, { useState } from 'react';
+import FlashCardList from './FlashCardList';
 
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.cards = [
-            {title: 'React.js', definition: 'Open-source, front end, JavaScript Library for builing UX or UI components'},
-            {title: 'HTML', definition: 'Hyper Text Markup Language'},
-            {title: 'CSS', definition: 'Cascading Style Sheets'},
-            {title: 'Create React App', definition: 'Tool to help developers create React apps'},
-            {title: 'Axios', definition: 'Javascript library used to make HTTP requests'},
-
-        ];
-        this.state = {
-            cardNumber: 0
-        }
-    }
-    
-    
-
-    render() {
-        return (
-            <div className="container-fluid">
-                <TitleBar />
-                <div className="row row-spacer"></div>
-                <div className="col">
-                    {/*Button here to move to next card*/}
-                    </div>
-                    <div className="col">
-                        {/*Display card here*/}
-                    </div>
-                    <div className="col">
-                        {/*Button here to move to previous card*/}
-
-                    </div>
-                </div>  
-        
-
-            
-
-        );
-    }
+function App() {
+    const [flashcards] = useState(Sample_FlashCards)
+    return (
+        <FlashCardList flashcards={flashcards} />
+    );
 }
 
-export default App;
+const Sample_FlashCards = [
+    {
+        id:1,
+        question: 'React.js',
+        answer: 'Open-source, front end, JavaScript Library for builing UX or UI components'
 
+    },
+    {
+        id:2,
+        question: 'HTML',
+        answer: 'Hyper Text Markup Language'
+
+    },
+    {
+        id:3,
+        question: 'Css',
+        answer: 'Cascading Style Sheets'
+
+    }
+]
+
+
+export default App;
