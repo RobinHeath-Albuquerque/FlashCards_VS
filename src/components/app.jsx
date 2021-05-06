@@ -1,34 +1,19 @@
-import React, { useState } from 'react';
-import FlashCardList from './FlashCardList';
+import React from 'react';
+//import FlashCardList from './FlashCardList';
+import NavBar from './NavBar/NavBar';
+//import './App.css';
+
 
 
 function App() {
-    const [flashcards] = useState(Sample_FlashCards)
     return (
-        <FlashCardList flashcards={flashcards} />
-    );
+        <div className="App">
+            <NavBar />
+
+        </div>
+    )
 }
 
-const Sample_FlashCards = [
-    {
-        id:1,
-        question: 'React.js',
-        answer: 'Open-source, front end, JavaScript Library for builing UX or UI components'
-
-    },
-    {
-        id:2,
-        question: 'HTML',
-        answer: 'Hyper Text Markup Language'
-
-    },
-    {
-        id:3,
-        question: 'Css',
-        answer: 'Cascading Style Sheets'
-
-    }
-]
-
-
 export default App;
+
+
