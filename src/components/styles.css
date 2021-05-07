@@ -1,0 +1,17 @@
+.APP {
+    font-family: sans-serif;
+    text-align: center;
+    
+    }
+    
+    .flash-card {
+        font-size: 24px;
+        line-height: 72px;
+        width: 216px;
+        border: 1px solid black;
+        margin: 18px;
+        background-color: #8c668f;
+        cursor: pointer;
+        user-select: none;
+    }
+    

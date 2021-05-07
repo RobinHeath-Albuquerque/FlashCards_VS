@@ -2,21 +2,53 @@
     background: rgb(138, 197, 194);
     height:  80px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: inline;
+    align-items: inline;
     font-size: 1.2rem;
 
 }
 
-nav-menu {
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    grid-gap: 10px;
-    list-style: none;
-    text-align: center;
-    width: 70vw;
-    justify-content: end;
-    margin-right: 2rem;
-
+.nav-links-mobile {
+    display: none;
 }
+
+@media screen and (max-width: 960px) {
+    .NavBarItems {
+        position: relative;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 500px;
+        position: absolute;
+        top: 80px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+
+    }
+
+    .nav-menu.active {
+        background: #6668f4;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1
+    }
+
+    .nav-links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+    
+}
+
+
+
+
+
 
