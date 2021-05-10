@@ -1,5 +1,6 @@
 import React from 'react';
 import "./styles.css";
+import Card from "./Card";
 //import FlashCardList from './FlashCardList';
 //import NavBar from './NavBar/NavBar';
 //import './App.css';
@@ -17,13 +18,6 @@ import "./styles.css";
    // )
 //}
 
-function Card(props) {
-    const [text, setText] = React.useState(props.frontSide);
-    function handleClick() {
-        setText(props.backSide);
-    }
-    return <div className="flash-card" onClick={handleClick}>{text}</div>;
-}
 
 export default function App() {
     return (
