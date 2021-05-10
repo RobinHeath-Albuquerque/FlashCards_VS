@@ -3,15 +3,16 @@ import React, {useState} from 'react';
 
 
 export default function Card({ frontSide, backSide }) {
-    const [text, setText] = useState(frontSide);
+    const [isFront, changeFace] = useState(true);
     function handleClick() {
-        setText(oldState => {
-            if (oldState === frontSide) {
-                return backSide;
-            } else {
-                return frontSide;
-            }
-        });
+        changeFace(oldState =>  !oldState);
+        
     }
-    return <div className="flash-card" onClick={handleClick}>{text}</div>;
+    const text = isFront ? frontSide : backSide;
+    const sideClass = isFront ? "front" : "back";
+    const classList = `flash-card ${sideClass}`;
+
+    return (
+    <div className={classList} onClick={handleClick}>{text}</div>
+    );
 }
