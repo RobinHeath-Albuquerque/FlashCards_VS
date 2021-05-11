@@ -1,11 +1,29 @@
-import React, { useState } from 'react';
-import "./styles.css";
-//import Card from "./Card";
-//import axios from 'axios';
+import React, { useState, useEffect } from 'react';
+import './app.css';
+//import FlashCard from './FlashCard';
+import axios from 'axios';
 import FlashCardList from './FlashCardList';
 
 function App() {
     const [flashcards] = useState(SAMPLE_FLASHCARDS)
+    useEffect(() => {
+        axios.get('http://127.0.0.1:8000/cards/')
+        .then(res => {
+            res.data.results.map((questionItem, index) => {
+                return {
+                    id: `${index}-${Date.now()}`,
+                    questions: questionItem.code,
+                    answer: questionItem.definition,
+                }
+
+
+            })
+            console.log(res.data)
+        })
+        
+        
+    }, [])
+
     return (
         <FlashCardList flashcards={flashcards} />
     )
@@ -22,7 +40,7 @@ function App() {
         {
             id: 2,
             code: 'Cakes',
-            definition: 'A super yummy bakes treat',
+            definition: 'A super yummy baked treat',
         }
     ]
 
