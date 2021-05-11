@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function FlashCard({ flashCard }) {
+export default function Flashcard({ flashcard }) {
     return (
         <div>
-            {flashCard}
+            {flashcard.code}
             
         </div>
     )
